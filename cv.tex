@@ -1,0 +1,257 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% and Jake Gutierrez's version of it
+% at https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% inspired by https://practicaltypography.com/resumes.html
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin = 1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+%--------------UNDERLINING---------------
+% taken from https://alexwlchan.net/2017/10/latex-underlines/
+
+\usepackage{contour}
+\usepackage{ulem}
+
+\renewcommand{\ULdepth}{3.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+%----------------------------------------
+
+\graphicspath{ {./Images/} }
+
+%----------FONT OPTIONS----------
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+
+% I could have just used the charter package here for the font I wanted...
+% but I'd still need to change compiler to XeLaTeX to include the title font
+% \usepackage{charter}
+
+\setmainfont{XCharter}
+
+\newfontfamily{\basictitle}{basictitlefont}[
+Path = Fonts/,
+Extension = .ttf,
+UprightFont = basictitlefont
+]
+% to use:
+% {\basictitle This text uses the basictitle font}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\iffalse
+% \iftrue
+\addtolength{\oddsidemargin}{0.3in}
+\addtolength{\marginparsep}{0.3in}
+\addtolength{\evensidemargin}{0.3in}
+\addtolength{\textwidth}{-0.5in}
+\addtolength{\topmargin}{0.3in}
+\addtolength{\textheight}{0.3in}
+\fi
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    {\color{gray}\titlerule} \vspace{-5pt}
+    \vspace{8pt}\scshape\raggedright\normalfont
+}{}{0pt}{}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% ----- TOGGLE PHOTO --------
+% comment out \iffalse and remove the % from \iftrue to toggle photo
+\iffalse
+% \iftrue
+\begin{wrapfigure}{R}{0.15\textwidth}
+\vspace{-35pt}
+\includegraphics[scale=0.20]{dp_cropped}
+\end{wrapfigure}
+\fi
+
+%----------HEADING----------
+
+{\Huge MIKHAIL LOGINOV}
+\\
+
+% ----- TOGGLE FOR PHOTO ----
+% \vspace{10pt}
+
+\href{mailto:log.mihail2003@gmail.com}{
+    \faEnvelope
+    \thinspace \thinspace
+    \myuline{log.mihail2003@gmail.com}} $|$
+\href{https://t.me/mm1kee}{
+    \faTelegram
+    \thinspace \thinspace        
+    \myuline{mm1kee}} $|$
+\href{https://github.com/Snow4DV}{
+    \faGithub
+    \thinspace \thinspace
+    \myuline{Snow4DV}} $|$
+\faPhone
+\thinspace \thinspace
++7 999 120 8909
+
+%-----------SUMMARY-----------
+\section{Summary}
+
+20 years old Android developer. Developed android applications following Modern Android Development principles (Compose, Clean Architecture, Kotlin) and more legacy techniques (XML, Fragments, Java). Contributed to open-source projects (\href{https://github.com/dessalines/jerboa/pull/1327}{Jerboa - federated social network client}, \href{https://github.com/ocpsoft/prettytime/pull/260}{PrettyTime - popular java library}) while implementing user-critical features. 
+  
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Russian Technological University MIREA}{Moscow}
+      {Software engineering, 3rd course, 5th semester}{2021-2025}
+    
+      
+  \resumeSubHeadingListEnd
+  
+    %-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/Snow4DV/comapr-android}{\textbf{Comapr}} $|$ \textit{Kotlin, Coroutines, Jetpack Compose, Retrofit, Room, Dagger-Hilt}}{ }
+          \resumeItemListStart
+            \resumeItem{Developed REST android application using recommended-by-google techniques}
+            \resumeItem{Used Clean Architecture/MVVM development principles}
+            \resumeItem{Implemented Spring/Kotlin/JPA/PostgreSQL backend}
+            \resumeItem{Followed Google's Material3 guidelines to improve UX}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/Snow4DV/p2p-fighting-game}{\textbf{P2P Fighting game}} $|$ \textit{Java, XML, Fragments, KryoNet TCP local networking, Custom SurfaceView}}{ }
+          \resumeItemListStart
+            \resumeItem{Developed custom 2D engine with self-written animatable sprite-drawing engine on SurfaceView}
+            \resumeItem{Introduced networking via KryoNet library}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/Snow4DV/CivicClimateControl}{\textbf{Civic Climate Control}} $|$ \textit{Kotlin + Java, Foreground services, service binding, USB serial}}{ }
+          \resumeItemListStart
+            \resumeItem{Developed an application to monitor car's climate control over custom UART protocol that is currently used by 10+ people}
+            \resumeItem{Implemented multiple android services: foreground service with overlay-activity, notification service that were connected to communication service using binding}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+    %-----------COURSES-----------
+\section{Related courses}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/Snow4DV/comapr-android}{\textbf{Samsung IT Academy}} $|$ Mobile development $|$ 2021-2022}{ }
+          \resumeItemListStart
+            \resumeItem{Digged more into application's architecutre, critical components under the hood }
+            \resumeItem{Learned and practiced clean architecture development using different patterns (mvvm/mvc) }
+            \resumeItem{Developed and successfully defended project (P2P fighting game) }
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://github.com/Snow4DV/comapr-android}{\textbf{Samsung IT School}} $|$ Mobile development $|$ 2018-2019}{ }
+          \resumeItemListStart
+            \resumeItem{Obtained first pieces of knowledge about android development}
+            \resumeItem{Introduced project that won on a regional level that led to completion with honors }
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages and technologies}{: Kotlin, Java, SQL, Python, Bash, C++, HTML/CSS/JS } \\
+     \textbf{Frameworks/Libraries}{: Jetpack Compose, Room, Dagger-Hilt, Paging3, KotlinX Coroutines, Retrofit, Spring Web/JPA, Postman, GraphQL, SQLite, psql, Curl} \\
+     \textbf{Know and use to develop}{: Git, Linux, Docker, Android Studio, DBeaver, IDEA, Vim, Clean Architecture, MVVM, MVC, REST} \\
+     \textbf{Speaking languages}{: English B2, Russian (native) } \\
+     }
+     }
+ \end{itemize}
+
+
+%
+
+\end{document}
+
